@@ -1,0 +1,20 @@
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '**/*'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - '**/*'
+
+jobs:
+  fmt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check fmt
+      run: go run test
